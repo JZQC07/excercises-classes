@@ -1,71 +1,79 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace excercises_uppg1
 {
-    class Program
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             Dog h1 = new Dog();
-
-            Console.WriteLine("Vad heter din hund?");
-            h1.Name = Console.ReadLine();
-            Console.WriteLine("Hur gammal är " + h1.Name + "? ");
-            h1.Age = Console.ReadLine();
-            Console.WriteLine("Vad är " + h1.Name + "för ras? ");
-            h1.Race = Console.ReadLine();
-
             Console.WriteLine(h1.Name);
-            Console.ReadKey();
             Console.WriteLine(h1.Age);
-            Console.ReadKey();
             Console.WriteLine(h1.Race);
-            Console.ReadKey();
             
             Dog.Bark();
-            Dog.Fetch();
-            Dog.Eat();
         }
     }
-    class Dog
+    public class Dog
     {
+        public Dog() //Konstruktor
+        {
+            Console.WriteLine("En ny hund har skapats!");
+
+            name = "Harald";
+            age = 12;
+            race = "Labrador";
+        }
+
+        private int age;
         private string name;
-        private string age;
         private string race;
 
-        public Dog()
+        public int Age
         {
-
+            get { return age; }
+            set { age = value; }
         }
         public string Name
         {
-            get { return name;}
-            set { name = value;}
-        }
-        public string Age
-        {
-            get { return "Han är " + age + " år gammal";}
-            set { age = value;}
+            get { return name; }
+            set { name = value; }
         }
         public string Race
         {
-            get { return "Han är en " + race;}
-            set { race = value;}
+            get { return race; }
+            set { race = value; }
         }
-
         public static void Bark()
         {
-            Console.WriteLine("Barks");
+            Dog h2 = new Dog();
+            Console.WriteLine("Vad heter den andra hunden?");
+            string name = Console.ReadLine();
+            Console.WriteLine("Hur gammal är {0}", name);
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Vad är {0} för ras?", name);
+            string race = Console.ReadLine();
+
+            Console.WriteLine(name + "är " + age + " år gammal, och är en {0}", race);
+            Console.WriteLine("Han skäller högt!");
+            Console.ReadKey();
+
+            Dog.Fetch();
         }
         public static void Fetch()
-        {   
-            Console.WriteLine("He is only two years old! He loves to play fetch.");
-        }
-        public static void Eat()
         {
-            Console.WriteLine("He is a Labrador, he eats a lot!");
-        }
+            Dog h3 = new Dog();
 
+            Console.WriteLine("Vad heter den tredje hunden?");
+            string name = Console.ReadLine();
+            Console.WriteLine("Hur gammal är {0}", name);
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Vad är {0} för ras?", name);
+            string race = Console.ReadLine();
+
+            Console.WriteLine(name + "är " + age + " år gammal, och är en {0}", race);
+            Console.WriteLine("Han skäller högt!");
+            Console.ReadKey();
+        }
     }
 }
