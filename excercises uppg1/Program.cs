@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace excercises_uppg1
 {
@@ -6,12 +7,13 @@ namespace excercises_uppg1
     {
         static void Main()
         {
-            dog h1 = new dog();
+            Dog h1 = new Dog();
+
             Console.WriteLine("Vad heter din hund?");
             h1.Name = Console.ReadLine();
-            Console.WriteLine("Hur gammal är: " + h1.Name);
+            Console.WriteLine("Hur gammal är " + h1.Name + "? ");
             h1.Age = Console.ReadLine();
-            Console.WriteLine("Vad är:" + h1.Name + "för ras?");
+            Console.WriteLine("Vad är " + h1.Name + "för ras? ");
             h1.Race = Console.ReadLine();
 
             Console.WriteLine(h1.Name);
@@ -21,20 +23,21 @@ namespace excercises_uppg1
             Console.WriteLine(h1.Race);
             Console.ReadKey();
             
-
-
-            dog.Bark();
-            dog.Fetch();
-            dog.Eat();
+            Dog.Bark();
+            Dog.Fetch();
+            Dog.Eat();
         }
-        
     }
-    class dog
+    class Dog
     {
         private string name;
         private string age;
         private string race;
 
+        public Dog()
+        {
+
+        }
         public string Name
         {
             get { return name;}
@@ -42,28 +45,26 @@ namespace excercises_uppg1
         }
         public string Age
         {
-            get { return "Han är: " + age + "år gammal";}
+            get { return "Han är " + age + " år gammal";}
             set { age = value;}
         }
         public string Race
         {
-            get { return "Han är en: " + race;}
+            get { return "Han är en " + race;}
             set { race = value;}
         }
 
-        
-
         public static void Bark()
         {
-            Console.WriteLine("Figo Barks");
+            Console.WriteLine("Barks");
         }
         public static void Fetch()
         {   
-            Console.WriteLine("Figo is only two years old! He loves to play fetch.");
+            Console.WriteLine("He is only two years old! He loves to play fetch.");
         }
         public static void Eat()
         {
-            Console.WriteLine("Figo is a Labrador, he eats a lot!");
+            Console.WriteLine("He is a Labrador, he eats a lot!");
         }
 
     }
